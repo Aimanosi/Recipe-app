@@ -43,8 +43,8 @@ const Recipe = () => {
         </Button>
         {activeTab === "instructions" && (
           <div>
-            <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
-            <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
+            <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+            <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
           </div>
         )}
 
@@ -61,9 +61,23 @@ const Recipe = () => {
 };
 
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 6rem;
   margin-bottom: 5rem;
   display: flex;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (max-width: 1200px) {
+    display: block;
+  }
+
+  img {
+    border-radius: 2rem;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
 
   .active {
     background: linear-gradient(35deg, #494949, #313131);
@@ -72,15 +86,28 @@ const DetailWrapper = styled.div`
 
   h2 {
     margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   li {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2.5rem;
+    margin-left: 1rem;
   }
 
   ul {
     margin-top: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    text-decoration: none;
+    margin-top: 2rem;
+    text-align: justify;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 
@@ -91,9 +118,15 @@ const Button = styled.button`
   border: 2px solid black;
   margin-right: 2rem;
   font-weight: 600;
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
 `;
 
 const Info = styled.div`
   margin-left: 5rem;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 export default Recipe;
