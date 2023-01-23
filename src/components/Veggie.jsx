@@ -68,6 +68,12 @@ const Veggie = () => {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+
+  h3 {
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
 `;
 
 const Card = styled.div`
