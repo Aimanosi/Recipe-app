@@ -32,6 +32,10 @@ const Nav = styled.div`
   justify-content: flex-start;
   align-items: center;
 
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
   svg {
     font-size: 2rem;
   }

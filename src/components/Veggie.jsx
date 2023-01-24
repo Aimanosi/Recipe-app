@@ -72,6 +72,7 @@ const Wrapper = styled.div`
   h3 {
     @media (max-width: 768px) {
       text-align: center;
+      margin: 0;
     }
   }
 `;

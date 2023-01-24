@@ -29,18 +29,20 @@ const Recipe = () => {
       </div>
 
       <Info>
-        <Button
-          className={activeTab === "instructions" ? "active" : ""}
-          onClick={() => setActiveTab("instructions")}
-        >
-          Instructions
-        </Button>
-        <Button
-          className={activeTab === "ingredient" ? "active" : ""}
-          onClick={() => setActiveTab("ingredient")}
-        >
-          Ingredients
-        </Button>
+        <section>
+          <Button
+            className={activeTab === "instructions" ? "active" : ""}
+            onClick={() => setActiveTab("instructions")}
+          >
+            Instructions
+          </Button>
+          <Button
+            className={activeTab === "ingredient" ? "active" : ""}
+            onClick={() => setActiveTab("ingredient")}
+          >
+            Ingredients
+          </Button>
+        </section>
         {activeTab === "instructions" && (
           <div>
             <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
@@ -120,6 +122,7 @@ const Button = styled.button`
   font-weight: 600;
   @media (max-width: 768px) {
     margin-top: 2rem;
+    margin-right: 0;
   }
 `;
 
@@ -128,5 +131,17 @@ const Info = styled.div`
   @media (max-width: 768px) {
     margin-left: 0;
   }
+
+  section {
+    button {
+      border-radius: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
 `;
+
 export default Recipe;

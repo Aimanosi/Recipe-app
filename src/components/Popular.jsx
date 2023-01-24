@@ -75,6 +75,7 @@ const Wrapper = styled.div`
   h3 {
     @media (max-width: 768px) {
       text-align: center;
+      margin: 0;
     }
   }
 `;
@@ -86,7 +87,8 @@ const Card = styled.div`
   position: relative;
 
   @media (max-width: 768px) {
-    margin-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
   }
 
   img {
